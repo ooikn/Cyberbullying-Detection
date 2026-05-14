@@ -25,17 +25,49 @@ Cyberbullying-Detection/media_folder_in_drive/
 **Install dependencies**
 pip install numpy pandas scikit-learn gensim torch transformers datasets joblib
 
-**Deduplication**
-The script deduplication.py checks for repeated text entries and eliminates them. This ensure the dataset contain unique samples only.
+##  Deduplication
 
-**Preprocessing**
+The script **`deduplication.py`** ensures dataset quality by checking for repeated post and eliminating duplicates.  
+This step guarantees that the dataset contains **unique samples only**, preventing bias during training and evaluation.
+
+Run:
+```bash
+python deduplication.py
+
+
+## Preprocessing
 The script preprocessing.py clean the text by removing the emojis, special characters, URLS, convert to lower case and tokenize into word lists. The output is saved in processed_dataset.json.
 
-**Implementation**
-Embeddings: Word2Vec (via Gensim), GloVe, and BERT (via Transformers).
-Hybrid Representation: Combination of GloVe + BERT embeddings.
-Models:
-Logistic Regression (baseline)
-Fine‑tuned Transformer (BERT)
+Run:
+```bash
+python preprocessing.py
+
+
+## Implementation
+
+The core script **`implementation.py`** integrates the hybrid feature representation and classification pipeline:
+
+- **Feature Extraction**
+  - Generates embeddings using **Word2Vec** (via Gensim), **GloVe**, and **BERT** (via HuggingFace Transformers).
+  - Combines GloVe and BERT embeddings into a **hybrid representation** to capture both semantic and contextual features.
+
+- **Model Training**
+  - **Logistic Regression** is used as a baseline classifier on the hybrid features.
+  - A **fine‑tuned transformer model (BERT)** is trained for deeper contextual understanding of cyberbullying language.
+
+- **Evaluation**
+  - Dataset split into **80:20 (train:test)** ratio.
+  - Predictions compared against true labels.
+  - Metrics reported: **Accuracy, Precision, Recall, F1‑score**.
+
+- **Reproducibility**
+  - Preprocessing scripts ensure consistent cleaning (emoji removal, lowercasing, tokenization).
+  - Processed datasets are saved in both **CSV** and **JSON** formats for reuse.
+  - Media files (images/videos) are linked to posts via a dedicated folder.
+
+Run:
+```bash
+python implementation.py
+
 
 
