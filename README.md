@@ -15,10 +15,27 @@ Installation Guide
 git clone https://github.com/ooikn/Cyberbullying-Detection.git
 cd Cyberbullying-Detection
 
+**Dataset Setup**
+Due to GitHub’s file size limits, the images and videos dataset folder (live_media_downloads) is placed into Google Drive.
+1. Download from Google Drive:
+Cyberbullying-Detection/media_folder_in_drive/
+
+2. Move the live_media_downloads folder to the Cyberbullying Detection directory.
+
 **Install dependencies**
 pip install numpy pandas scikit-learn gensim torch transformers datasets joblib
 
-**Dataset Setup**
-Due to GitHub’s file size limits, the images and videos dataset is hosted externally.
-Download from Google Drive:
-Cyberbullying-Detection/media_folder_in_drive/
+**Deduplication**
+The script deduplication.py checks for repeated text entries and eliminates them. This ensure the dataset contain unique samples only.
+
+**Preprocessing**
+The script preprocessing.py clean the text by removing the emojis, special characters, URLS, convert to lower case and tokenize into word lists. The output is saved in processed_dataset.json.
+
+**Implementation**
+Embeddings: Word2Vec (via Gensim), GloVe, and BERT (via Transformers).
+Hybrid Representation: Combination of GloVe + BERT embeddings.
+Models:
+Logistic Regression (baseline)
+Fine‑tuned Transformer (BERT)
+
+
