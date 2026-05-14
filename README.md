@@ -33,15 +33,17 @@ This step guarantees that the dataset contains **unique samples only**, preventi
 Run:
 ```bash
 python deduplication.py
+```
 
+##  Preprocessing
 
-## Preprocessing
-The script preprocessing.py clean the text by removing the emojis, special characters, URLS, convert to lower case and tokenize into word lists. The output is saved in processed_dataset.json.
+The script **`preprocessing.py`** cleans the text by removing emojis, special characters, and URLs, converting to lowercase, and tokenizing into word lists.  
+The output is saved in **`processed_dataset.json`**.
 
 Run:
 ```bash
 python preprocessing.py
-
+```
 
 ## Implementation
 
@@ -68,6 +70,6 @@ The core script **`implementation.py`** integrates the hybrid feature representa
 Run:
 ```bash
 python implementation.py
-
+```
 
 
