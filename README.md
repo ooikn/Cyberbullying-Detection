@@ -12,8 +12,10 @@ The goal is to detect online harassment and aggressive language in social media 
 Installation Guide
 
 **Clone the repository**
+```
 git clone https://github.com/ooikn/Cyberbullying-Detection.git
 cd Cyberbullying-Detection
+```
 
 **Dataset Setup**
 Due to GitHub’s file size limits, the images and videos dataset folder (live_media_downloads) is placed into Google Drive.
