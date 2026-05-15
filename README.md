@@ -25,7 +25,9 @@ Cyberbullying-Detection/media_folder_in_drive/
 2. Move the live_media_downloads folder to the Cyberbullying Detection directory.
 
 **Install dependencies**
+```
 pip install numpy pandas scikit-learn gensim torch transformers datasets joblib
+```
 
 ##  Deduplication
 
